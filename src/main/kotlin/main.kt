@@ -5,6 +5,8 @@ fun main(args: Array<String>) {
     Day2().part2()
     Day3().part1()
     Day3().part2()
+    Day4().part1()
+    Day4().part2()
 
 //    Day2019().part1()
  //   Day2019().part2()

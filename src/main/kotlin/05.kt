@@ -53,7 +53,6 @@ class Day5 : Day {
             .count()
 
         return println("Day $day-1: $result")
-
     }
 
     override fun part2() {
@@ -84,13 +83,10 @@ class Day5 : Day {
                     (pair.second.x .. pair.first.x).map { Point( it, pair.first.y) } }
             }
 
-
         val diagonals = pointPairs.filter {pair -> pair.first.x != pair.second.x && pair.first.y != pair.second.y}
             .flatMap { pair ->
-                val x1 = pair.first.x
-                val x2 = pair.second.x
-                val y1 = pair.first.y
-                val y2 = pair.second.y
+                val (x1,y1)= pair.first
+                val (x2,y2) = pair.second
 
                 val xrange = if (x1<x2) (x1..x2) else (x2..x1).reversed()
                 val yrange = if (y1<y2) (y1..y2) else (y2..y1).reversed()
@@ -101,10 +97,7 @@ class Day5 : Day {
             .filter { it.value.size > 1}
             .count()
 
-
         return println("Day $day-2: $result")
-
     }
-
 }
 

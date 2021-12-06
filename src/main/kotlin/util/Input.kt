@@ -17,5 +17,11 @@ class Input {
                     it.toList()
                 }
 
+        fun readSingleLineAsInt(day: Int): List<Int> {
+            val lines = File(resourcePath+ "input-" + day + ".txt").readLines()
+            assert(lines.size==1)
+            return lines[0].split(",").map { it.toInt() }
+        }
+
     }
 }

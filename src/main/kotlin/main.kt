@@ -15,6 +15,8 @@ fun main(args: Array<String>) {
     Day6().part2()
     Day7().part1()
     Day7().part2()
+    Day8().part1()
+    Day8().part2()
     //Day2019().part1()
     //Day2019().part2()
 }

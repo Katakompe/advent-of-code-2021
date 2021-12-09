@@ -4,7 +4,6 @@ import util.Input
 class Day3 : Day {
     override val day = 3
 
-    @OptIn(ExperimentalStdlibApi::class)
     override fun part1() {
         val input = Input.readAsString(3)
         val oneCount = input.map { it.toList().map {a -> a.digitToInt()} }
@@ -20,7 +19,6 @@ class Day3 : Day {
 
     }
 
-    @OptIn(ExperimentalStdlibApi::class)
     override fun part2() {
         val input = Input.readAsString(3)
         val numDigits = input[0].length
@@ -58,7 +56,6 @@ class Day3 : Day {
         return println("Day $day-2: $result")
     }
 
-    @OptIn(ExperimentalStdlibApi::class)
     fun findCommonValues(input: List<String>, commonNumbers: List<Int>): Int {
         var filteredOutput = input
         for(i in 0..commonNumbers.size) {

@@ -1,7 +1,5 @@
 package util.containers
 
-import java.util.function.BiPredicate
-
 data class Field<T>(val x: Int, val y: Int, var value: T, var flag: Boolean = false)
 
 data class Grid<T>(val input: List<List<T>>) {

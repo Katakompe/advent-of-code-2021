@@ -79,9 +79,7 @@ class Day11 : Day {
                 }
 
         }
-
         return println("Day $day-2: $result")
-
     }
 
 }

@@ -31,5 +31,14 @@ class Input {
 
             }
 
+        fun <T, U> readAs2EmptyLineSplitInputs(day: Int, f1: (String) -> T, f2: (String) -> U): Pair<List<T>, List<U>> {
+            val lines = File(resourcePath + "input-" + day + ".txt").readLines()
+            val splitLine = lines.indexOfFirst { it.isBlank() }
+            val firstList = lines.subList(0, splitLine).map(f1)
+            val secondList = lines.subList(splitLine+1, lines.lastIndex+1).map(f2)
+
+            return firstList to secondList
+        }
+
     }
 }

@@ -1,15 +1,28 @@
 package util.containers
 
-data class Field<T>(val x: Int, val y: Int, var value: T, var flag: Boolean = false)
+data class Field<T>(val x: Int, val y: Int, var value: T, var flag: Boolean = false) {
+    override fun equals(other: Any?): Boolean {
+        if(this=== other) {
+            return true
+        }
+        if(other?.javaClass != javaClass) {return false}
+        other as Field<T>
+        return this.x == other.x && this.y == other.y
+    }
+
+    override fun hashCode(): Int {
+        val tmp = ( y +  ((x+1)/2));
+        return x +  ( tmp * tmp);
+    }
+}
 
 data class Grid<T>(val input: List<List<T>>) {
-    val grid = input.mapIndexed { i, row ->
+    var grid = input.mapIndexed { i, row ->
         row.mapIndexed { j, t -> Field(i, j, t) }
     }
 
-    val rowLength = input.get(0).size
-    val colLength = input.size
-    val square = rowLength == colLength
+    var rowLength = input.get(0).size
+    var colLength = input.size
 
     fun getNeighbors(x: Int, y: Int, diagonals: Boolean = true) = getNeighbors(grid[x][y], diagonals)
 
@@ -45,4 +58,6 @@ data class Grid<T>(val input: List<List<T>>) {
 
     fun filter(filterFun: (Field<T>) -> Boolean) = grid.flatten().filter(filterFun)
     fun all(predicate: (Field<T>) -> Boolean) = grid.all { it.all(predicate) }
+
+
 }

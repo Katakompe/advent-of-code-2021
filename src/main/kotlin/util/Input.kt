@@ -23,6 +23,12 @@ class Input {
             return lines[0].split(",").map { it.toInt() }
         }
 
+        fun readSingleLineAsString(day: Int): String {
+            val lines = File(resourcePath + "input-" + day + ".txt").readLines()
+            assert(lines.size == 1)
+            return lines[0]
+        }
+
         fun readAs2DIntList(day: Int): List<List<Int>> =
             File(resourcePath + "input-" + day + ".txt").useLines {
                 it.toList().map { value ->

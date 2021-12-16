@@ -29,8 +29,9 @@ fun main() {
 //    Day13().part2()
 //    Day14().part1()
 //    Day14().part2()
-    Day15().part1()
-    Day15().part2()
-
+//    Day15().part1()
+//    Day15().part2()
+    Day16().part1()
+    Day16().part2()
 
 }
